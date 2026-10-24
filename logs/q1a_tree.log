@@ -1,18 +1,18 @@
-max_depth=2, min_samples_leaf=1, val_acc=0.1000, leaves=4
-max_depth=2, min_samples_leaf=2, val_acc=0.1000, leaves=4
-max_depth=2, min_samples_leaf=4, val_acc=0.1000, leaves=4
-max_depth=4, min_samples_leaf=1, val_acc=0.1500, leaves=6
-max_depth=4, min_samples_leaf=2, val_acc=0.1500, leaves=6
-max_depth=4, min_samples_leaf=4, val_acc=0.1500, leaves=6
-max_depth=8, min_samples_leaf=1, val_acc=0.2125, leaves=10
-max_depth=8, min_samples_leaf=2, val_acc=0.2125, leaves=10
-max_depth=8, min_samples_leaf=4, val_acc=0.2125, leaves=10
-max_depth=16, min_samples_leaf=1, val_acc=0.3125, leaves=18
-max_depth=16, min_samples_leaf=2, val_acc=0.3125, leaves=18
-max_depth=16, min_samples_leaf=4, val_acc=0.3125, leaves=18
-max_depth=None, min_samples_leaf=1, val_acc=0.5125, leaves=46
-max_depth=None, min_samples_leaf=2, val_acc=0.5000, leaves=46
-max_depth=None, min_samples_leaf=4, val_acc=0.5250, leaves=40
+max_depth=2, min_samples_leaf=1, train_acc=0.1000, val_acc=0.1000, leaves=4, mean/leaf=60.00, single-sample leaves=0.000
+max_depth=2, min_samples_leaf=2, train_acc=0.1000, val_acc=0.1000, leaves=4, mean/leaf=60.00, single-sample leaves=0.000
+max_depth=2, min_samples_leaf=4, train_acc=0.1000, val_acc=0.1000, leaves=4, mean/leaf=60.00, single-sample leaves=0.000
+max_depth=4, min_samples_leaf=1, train_acc=0.1500, val_acc=0.1500, leaves=6, mean/leaf=40.00, single-sample leaves=0.000
+max_depth=4, min_samples_leaf=2, train_acc=0.1500, val_acc=0.1500, leaves=6, mean/leaf=40.00, single-sample leaves=0.000
+max_depth=4, min_samples_leaf=4, train_acc=0.1500, val_acc=0.1500, leaves=6, mean/leaf=40.00, single-sample leaves=0.000
+max_depth=8, min_samples_leaf=1, train_acc=0.2500, val_acc=0.2125, leaves=10, mean/leaf=24.00, single-sample leaves=0.000
+max_depth=8, min_samples_leaf=2, train_acc=0.2500, val_acc=0.2125, leaves=10, mean/leaf=24.00, single-sample leaves=0.000
+max_depth=8, min_samples_leaf=4, train_acc=0.2500, val_acc=0.2125, leaves=10, mean/leaf=24.00, single-sample leaves=0.000
+max_depth=16, min_samples_leaf=1, train_acc=0.4500, val_acc=0.3125, leaves=18, mean/leaf=13.33, single-sample leaves=0.000
+max_depth=16, min_samples_leaf=2, train_acc=0.4500, val_acc=0.3125, leaves=18, mean/leaf=13.33, single-sample leaves=0.000
+max_depth=16, min_samples_leaf=4, train_acc=0.4500, val_acc=0.3125, leaves=18, mean/leaf=13.33, single-sample leaves=0.000
+max_depth=None, min_samples_leaf=1, train_acc=1.0000, val_acc=0.5125, leaves=46, mean/leaf=5.22, single-sample leaves=0.130
+max_depth=None, min_samples_leaf=2, train_acc=0.9750, val_acc=0.5000, leaves=46, mean/leaf=5.22, single-sample leaves=0.000
+max_depth=None, min_samples_leaf=4, train_acc=0.9750, val_acc=0.5250, leaves=40, mean/leaf=6.00, single-sample leaves=0.000
 
 SELECTED (frozen): max_depth=None, min_samples_leaf=4
 train accuracy: 0.9750

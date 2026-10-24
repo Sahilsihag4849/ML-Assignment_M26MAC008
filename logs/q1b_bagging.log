@@ -1,0 +1,10 @@
+frozen tree: max_depth=None, min_samples_leaf=4
+theoretical expected distinct per bootstrap: 151.89 (limit 0.632*n = 151.68)
+
+B=  1  train=0.6875  val=0.4875  test=0.4500  avg distinct=157.00
+B=  5  train=0.9375  val=0.6000  test=0.6125  avg distinct=153.00
+B= 10  train=0.9750  val=0.6875  test=0.6625  avg distinct=152.50
+B= 25  train=1.0000  val=0.7875  test=0.8375  avg distinct=152.76
+B= 50  train=1.0000  val=0.8000  test=0.8375  avg distinct=152.52
+B=100  train=1.0000  val=0.8375  test=0.8750  avg distinct=152.31
+B=200  train=1.0000  val=0.8500  test=0.9000  avg distinct=151.81
