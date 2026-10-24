@@ -18,9 +18,10 @@ def mask_faces(X):
     X[:, 24:40, 24:40] = 0
     return X.reshape(len(X), -1)
 
+
 def vote_counts(preds, mask=None):
     """counts[i, k] = number of trees voting class k for example i.
-    mask[b, i] = True means tree b is allowed to vote on example i (used for OOB)."""
+    mask[b, i] = True means tree b may vote on example i (used for OOB)."""
     N = preds.shape[1]
     counts = np.zeros((N, 40))
     for b in range(len(preds)):
