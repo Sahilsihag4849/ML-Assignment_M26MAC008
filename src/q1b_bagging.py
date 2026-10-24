@@ -2,31 +2,22 @@ import os
 import json
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
-from common import load_data, project_folder
+from common import load_data, mask_faces, project_folder, vote_counts
 
 (X_train, y_train, X_val, y_val, X_test, y_test), seed = load_data()
-
-with open(os.path.join(project_folder, "configs", "frozen_tree.json")) as f:
-    cfg = json.load(f)
+cfg = json.load(open(os.path.join(project_folder, "configs", "frozen_tree.json")))
 depth, leaf = cfg["max_depth"], cfg["min_samples_leaf"]
 
-n = len(X_train)                       # 240
+n = len(X_train)                         # 240
 B_list = [1, 5, 10, 25, 50, 100, 200]
 max_B = max(B_list)
-
 rng = np.random.default_rng([seed, 1])   # separate generator, does not touch the split
-
-lines = []
-
-
-def say(text):
-    print(text)
-    lines.append(text)
-
+Xte_m = mask_faces(X_test)               # masked test set (models are trained on clean images only)
 
 pred_train = np.zeros((max_B, len(X_train)), dtype=int)
 pred_val = np.zeros((max_B, len(X_val)), dtype=int)
 pred_test = np.zeros((max_B, len(X_test)), dtype=int)
+pred_test_m = np.zeros((max_B, len(X_test)), dtype=int)
 in_bag = np.zeros((max_B, n), dtype=bool)   # was training image j in tree b's sample?
 distinct = np.zeros(max_B)
 
@@ -39,31 +30,21 @@ for b in range(max_B):
     pred_train[b] = tree.predict(X_train)
     pred_val[b] = tree.predict(X_val)
     pred_test[b] = tree.predict(X_test)
-
-
-def vote_predict(preds, B):
-    """Majority vote of the first B trees. Ties go to the lowest class number."""
-    votes = np.zeros((preds.shape[1], 40))
-    for b in range(B):
-        votes[np.arange(preds.shape[1]), preds[b]] += 1
-    return votes.argmax(axis=1)
-
+    pred_test_m[b] = tree.predict(Xte_m)
+    if b % 20 == 0:
+        print("tree", b, "of", max_B)
 
 theory = n * (1 - (1 - 1 / n) ** n)
-say(f"frozen tree: max_depth={depth}, min_samples_leaf={leaf}")
-say(f"theoretical expected distinct per bootstrap: {theory:.2f} (limit 0.632*n = {0.632 * n:.2f})")
-say("")
+lines = [f"frozen tree: max_depth={depth}, min_samples_leaf={leaf}",
+         f"theoretical expected distinct per bootstrap: {theory:.2f} (limit 0.632*n = {0.632 * n:.2f})", ""]
 for B in B_list:
-    tr = (vote_predict(pred_train, B) == y_train).mean()
-    va = (vote_predict(pred_val, B) == y_val).mean()
-    te = (vote_predict(pred_test, B) == y_test).mean()
-    say(f"B={B:3d}  train={tr:.4f}  val={va:.4f}  test={te:.4f}  "
-        f"avg distinct={distinct[:B].mean():.2f}")
+    acc = [(vote_counts(p[:B]).argmax(1) == t).mean()
+           for p, t in [(pred_train, y_train), (pred_val, y_val), (pred_test, y_test)]]
+    lines.append(f"B={B:3d}  train={acc[0]:.4f}  val={acc[1]:.4f}  test={acc[2]:.4f}  "
+                 f"avg distinct={distinct[:B].mean():.2f}")
+print("\n".join(lines))
 
-os.makedirs(os.path.join(project_folder, "results"), exist_ok=True)
-os.makedirs(os.path.join(project_folder, "logs"), exist_ok=True)
 np.savez(os.path.join(project_folder, "results", "q1_bagging.npz"),
          pred_train=pred_train, pred_val=pred_val, pred_test=pred_test,
-         in_bag=in_bag, distinct=distinct)
-with open(os.path.join(project_folder, "logs", "q1b_bagging.log"), "w") as f:
-    f.write("\n".join(lines) + "\n")
+         pred_test_masked=pred_test_m, in_bag=in_bag, distinct=distinct)
+open(os.path.join(project_folder, "logs", "q1b_bagging.log"), "w").write("\n".join(lines) + "\n")

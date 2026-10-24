@@ -6,3 +6,4 @@ B= 50 val=0.8000 oob=0.6458 (covered 240/240) disagreement=0.7990 margin=0.2595
 B=100 val=0.8375 oob=0.7000 (covered 240/240) disagreement=0.7967 margin=0.2766
 B=200 val=0.8500 oob=0.7542 (covered 240/240) disagreement=0.8021 margin=0.2669
 SELECTED B=200
+margin at B=200: correct faces 0.3010 (68), wrong faces 0.0742 (12)
