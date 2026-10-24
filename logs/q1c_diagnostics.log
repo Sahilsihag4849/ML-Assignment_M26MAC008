@@ -1,0 +1,8 @@
+B=  1 val=0.4875 oob=0.3494 (covered 83/240) disagreement=nan margin=1.0000
+B=  5 val=0.6000 oob=0.3037 (covered 214/240) disagreement=0.7863 margin=0.2450
+B= 10 val=0.6875 oob=0.3571 (covered 238/240) disagreement=0.7792 margin=0.2750
+B= 25 val=0.7875 oob=0.5667 (covered 240/240) disagreement=0.7877 margin=0.2715
+B= 50 val=0.8000 oob=0.6458 (covered 240/240) disagreement=0.7990 margin=0.2595
+B=100 val=0.8375 oob=0.7000 (covered 240/240) disagreement=0.7967 margin=0.2766
+B=200 val=0.8500 oob=0.7542 (covered 240/240) disagreement=0.8021 margin=0.2669
+SELECTED B=200
