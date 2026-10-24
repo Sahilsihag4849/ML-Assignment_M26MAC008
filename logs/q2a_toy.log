@@ -9,3 +9,4 @@ updated weights:    [0.0556 0.0556 0.0556 0.0556 0.0556 0.0556 0.2222 0.2222 0.2
 3-round run: eps = [0.3333, 0.1667, 0.0667], alphas = [1.3863 2.3026 3.3322]
 ensemble prediction: [0 0 0 1 1 1 2 2 2]  (accuracy 1.000)
 normalised vote q_k for sample 0: [0.5254 0.4746 0.    ]
+
