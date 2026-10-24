@@ -1,0 +1,15 @@
+frozen tree {'max_depth': None, 'min_samples_leaf': 4}, final B=200
+
+[clean] tree acc=0.5000 conf=0.9765 | bagging acc=0.9000 conf=0.3621
+[clean] bagging fixes tree: 33, both wrong: 7, bagging breaks tree: 1
+[clean] bag fixes tree: test face 1, true=0, tree=29 (conf 1.00), bag=0, top votes={0: 45, 1: 35, 4: 19}, votes for true class=45/200
+[clean] bag fixes tree: test face 4, true=2, tree=29 (conf 1.00), bag=2, top votes={2: 43, 25: 22, 16: 16}, votes for true class=43/200
+[clean] both wrong: test face 0, true=0, tree=29 (conf 1.00), bag=1, top votes={1: 22, 25: 22, 17: 14}, votes for true class=6/200
+[clean] both wrong: test face 7, true=3, tree=37 (conf 1.00), bag=30, top votes={30: 27, 3: 19, 12: 19}, votes for true class=19/200
+
+[masked] tree acc=0.5000 conf=0.9765 | bagging acc=0.8000 conf=0.2498
+[masked] bagging fixes tree: 27, both wrong: 13, bagging breaks tree: 3
+[masked] bag fixes tree: test face 1, true=0, tree=29 (conf 1.00), bag=0, top votes={0: 36, 1: 32, 35: 12}, votes for true class=36/200
+[masked] bag fixes tree: test face 5, true=2, tree=4 (conf 0.86), bag=2, top votes={2: 38, 35: 20, 30: 18}, votes for true class=38/200
+[masked] both wrong: test face 0, true=0, tree=29 (conf 1.00), bag=30, top votes={30: 17, 1: 16, 35: 14}, votes for true class=4/200
+[masked] both wrong: test face 4, true=2, tree=29 (conf 1.00), bag=33, top votes={33: 22, 2: 17, 35: 17}, votes for true class=17/200
