@@ -1,0 +1,25 @@
+depth=1: 100 learners kept, 100 rounds run, stop status=none, time=8.1s
+  depth=1 rounds= 10 val_acc=0.0250
+  depth=1 rounds= 25 val_acc=0.0875
+  depth=1 rounds= 50 val_acc=0.1125
+  depth=1 rounds=100 val_acc=0.1250
+depth=2: 100 learners kept, 100 rounds run, stop status=none, time=16.3s
+  depth=2 rounds= 10 val_acc=0.0500
+  depth=2 rounds= 25 val_acc=0.1000
+  depth=2 rounds= 50 val_acc=0.1375
+  depth=2 rounds=100 val_acc=0.1000
+depth=3: 100 learners kept, 100 rounds run, stop status=none, time=24.4s
+  depth=3 rounds= 10 val_acc=0.0625
+  depth=3 rounds= 25 val_acc=0.1250
+  depth=3 rounds= 50 val_acc=0.1625
+  depth=3 rounds=100 val_acc=0.3000
+depth=4: 100 learners kept, 100 rounds run, stop status=none, time=34.2s
+  depth=4 rounds= 10 val_acc=0.1625
+  depth=4 rounds= 25 val_acc=0.1500
+  depth=4 rounds= 50 val_acc=0.4500
+  depth=4 rounds=100 val_acc=0.5000
+
+SELECTED (frozen): depth=4, rounds=100, val_acc=0.5000
+selected model train accuracy: 1.0000
+selected model val accuracy: 0.5000
+selected model test accuracy: 0.4875
