@@ -4,7 +4,6 @@
 - **Roll number:** M26MAC008
 - **Seed:** 26008 
 - **Repository:** https://github.com/Sahilsihag4849/ML-Assignment_M26MAC008
-- **Final code commit:** d3bad90b1172e2a3f44cf33e2efbdc7c71e435b1
 
 ## Environment
 Python <output of `python --version`>. Main packages: numpy 2.5.4, scikit-learn 1.9.1, scipy 1.18.1, matplotlib 3.11.2, joblib 1.6.0 (all pinned in `requirements.txt`).
