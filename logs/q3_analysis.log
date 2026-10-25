@@ -1,0 +1,29 @@
+30 repetitions loaded
+
+Q3(a): selected single tree, bagging, boosting (clean test set)
+single tree  bias2=0.3678 variance=0.6555 acc mean=0.4883 std=0.0553
+bagging      bias2=0.5329 variance=0.0203 acc mean=0.7642 std=0.0462
+boosting     bias2=0.8804 variance=0.0159 acc mean=0.3313 std=0.0831
+
+Q3(b,c): per setting
+shallow  {'max_depth': 8, 'min_samples_leaf': 4}
+   single: bias2=1.2723 var=0.3952 acc=0.1663+-0.0255
+   bag100: bias2=0.8087 var=0.0159 acc=0.4437+-0.0574
+   variance removed=0.3793 (96.0%), accuracy gain=+0.2775
+   leaves=10, mean samples/leaf=24.00, single-sample leaves=0.000, mean tree disagreement=0.9269
+selected {'max_depth': None, 'min_samples_leaf': 4}
+   single: bias2=0.3678 var=0.6555 acc=0.4883+-0.0553
+   bag100: bias2=0.5332 var=0.0243 acc=0.7600+-0.0457
+   variance removed=0.6312 (96.3%), accuracy gain=+0.2717
+   leaves=40, mean samples/leaf=6.00, single-sample leaves=0.000, mean tree disagreement=0.8352
+deep     {'max_depth': None, 'min_samples_leaf': 1}
+   single: bias2=0.3678 var=0.6555 acc=0.4883+-0.0553
+   bag100: bias2=0.5072 var=0.0241 acc=0.7863+-0.0560
+   variance removed=0.6314 (96.3%), accuracy gain=+0.2979
+   leaves=46, mean samples/leaf=5.22, single-sample leaves=0.130, mean tree disagreement=0.8227
+
+Q3(d): final table (means over the refits)
+model         clean_acc masked_acc | clean bias2  var | masked bias2  var
+single tree   0.4883    0.3146    | 0.3678  0.6555 | 0.6128  0.7580
+bagging       0.7642    0.5600    | 0.5329  0.0203 | 0.7039  0.0233
+boosting      0.3313    0.2525    | 0.8804  0.0159 | 0.8890  0.0174
