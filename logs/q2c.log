@@ -1,0 +1,15 @@
+bagging  L= 25 train=1.0000 val=0.7875 test=0.8375 time=36.9s
+boosting L= 25 train=0.4667 val=0.1500 test=0.1625 time=12.0s
+bagging  L= 50 train=1.0000 val=0.8000 test=0.8375 time=73.5s
+boosting L= 50 train=0.9958 val=0.4500 test=0.4875 time=23.1s
+bagging  L=100 train=1.0000 val=0.8375 test=0.8750 time=147.6s
+boosting L=100 train=1.0000 val=0.5000 test=0.4875 time=47.5s
+
+heaviest face: training image 60, person 10
+weight: start 0.0042, largest 0.0807 (round 36)
+wrong in 87 of 100 rounds
+history (X = wrong, . = right): XX.XXXXXX.XXXXXX.XXXXXXXXXX.XXXXXXX.XXXXXX.XXXXXX.XXXXXXX.XXXXXX.XXXXXXX.XXXXXXX.XXXXXXX.XXXXXX.XXXX
+weight change after a miss: x1.50
+weight change after a hit:  x0.08
+nearest image of the same person:    7.66
+nearest image of another person:     9.38
