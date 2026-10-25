@@ -1,0 +1,18 @@
+clean  tree     acc=0.5000  mean winning=0.9765
+clean  bagging  acc=0.9000  mean winning=0.3621
+clean  boosting acc=0.4875  mean winning=0.1201
+clean  mean disagreement among bagged trees = 0.8126
+masked tree     acc=0.5000  mean winning=0.9765
+masked bagging  acc=0.8000  mean winning=0.2498
+masked boosting acc=0.4750  mean winning=0.1145
+masked mean disagreement among bagged trees = 0.8853
+tree splits that use a pixel inside the masked block: 1 of 39
+  that split: pixel 2274, threshold 0.6095, training samples reaching it: 10
+test faces whose leaf changes under the mask: 1 of 80
+bagging stays right, boosting breaks: 5 faces; boosting stays right, bagging breaks: 3 faces
+
+CHOSEN FACE: test index 2, true person 1
+clean  tree says 1 | bagging says 1 (true-class votes 142/200, top 142/200, tree disagreement 0.491) | boosting says 1 (true-class q 0.1158, top q 0.1158)
+masked tree says 1 | bagging says 1 (true-class votes 90/200, top 90/200, tree disagreement 0.768) | boosting says 3 (true-class q 0.0996, top q 0.0997)
+boosting learners whose vote changes with the mask: 6/100, carrying 0.058 of total alpha
+average sample-weight share of person 1's 6 training faces: 0.027 (uniform would be 0.025)
